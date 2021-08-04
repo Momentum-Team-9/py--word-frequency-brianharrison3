@@ -20,38 +20,24 @@ with open("one-today.txt") as one_today:
         list_poem = list(text.split(" "))   
         return list_poem 
     lines = Convert(lines)
-    
+
+   
+
+
 
 #wordcount
     wordcount = {};
+#get rid of empty spaces
+    empty = [" ", '', '']
+    for word in lines:
+        if word in empty:
+            lines.remove(word)
+#print words
     for single_word in lines: 
         wordcount[single_word] = wordcount.get(single_word, 0) + 1
+        
         print(wordcount[single_word], single_word)
+    #print(sorted(wordcount.items(), key=lambda seq: seq[0]))
         
 
 
-    
-
-
-    
-
-
-
-
-
-
-    
-    
-
-
-
-
-
-    
-    
-
-
-
-#print(f"{len(lines)} lines in the file.")
-#f = open("demofile.txt", "r")
-#print(f.read())
